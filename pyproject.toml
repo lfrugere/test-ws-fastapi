@@ -10,7 +10,17 @@ dependencies = [
     "uvicorn>=0.32.0",
 ]
 
+[build-system]
+requires = ["hatchling>=1.27.0"]
+build-backend = "hatchling.build"
+
+[project.scripts]
+start-api = "app.main:main"
+
 [dependency-groups]
 dev = [
     "flake8>=7.1.0",
 ]
+
+[tool.hatch.build.targets.wheel]
+packages = ["app"]
